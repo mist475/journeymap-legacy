@@ -271,7 +271,8 @@ public class BlockMD
                 block.getSubBlocks(item, null, subBlocks);
                 for (ItemStack subBlockStack : subBlocks)
                 {
-                    metas.add(subBlockStack.getMetadata());
+                    //GetMetaData
+                    metas.add(subBlockStack.getItemDamage());
                 }
             }
         }

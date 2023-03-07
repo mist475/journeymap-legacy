@@ -28,13 +28,15 @@ public class ForgePlayerUtil implements IPlayerUtil
      */
     public GameProfile getPlayerInfoById(UUID uuid)
     {
-        MinecraftServer server = MinecraftServer.getServer();
+        //MinecraftServer server = MinecraftServer.getServer();
+        return getPlayerEntityByUUID(uuid).getGameProfile();
+        //func_152359_aw
         // 1.8
-        GameProfile gameProfile = server.getPlayerProfileCache().func_152652_a(uuid);
+        //GameProfile gameProfile = server.getPlayerProfileCache().func_152652_a(uuid);
 
         // 1.8.8
         // GameProfile gameProfile = server.getPlayerProfileCache().getProfileByUUID(uuid);
-        return gameProfile;
+        //return gameProfile;
     }
 
     /**
@@ -45,9 +47,10 @@ public class ForgePlayerUtil implements IPlayerUtil
      */
     public GameProfile getPlayerProfileByName(String playerName)
     {
-        MinecraftServer server = MinecraftServer.getServer();
-        GameProfile gameProfile = server.getPlayerProfileCache().getGameProfileForUsername(playerName);
-        return gameProfile;
+        return getPlayerEntityByName(playerName).getGameProfile();
+        //MinecraftServer server = MinecraftServer.getServer();
+        //GameProfile gameProfile = server.getPlayerProfileCache().getGameProfileForUsername(playerName);
+        //return gameProfile;
     }
 
     /**
@@ -61,8 +64,8 @@ public class ForgePlayerUtil implements IPlayerUtil
         EntityPlayerMP player = getPlayerEntityByName(playerName);
         if (player instanceof EntityPlayerMP)
         {
-            UserListOps ops = MinecraftServer.getServer().getConfigurationManager().getOppedPlayers();
-            for (String name : ops.getKeys())
+            UserListOps ops = MinecraftServer.getServer().getConfigurationManager().func_152603_m();
+            for (String name : ops.func_152685_a())
             {
                 if (playerName.equals(name))
                 {
@@ -82,7 +85,7 @@ public class ForgePlayerUtil implements IPlayerUtil
     public EntityPlayerMP getPlayerEntityByName(String name)
     {
         MinecraftServer server = MinecraftServer.getServer();
-        return server.getConfigurationManager().getPlayerByUsername(name);
+        return server.getConfigurationManager().func_152612_a(name);
     }
 
     /**

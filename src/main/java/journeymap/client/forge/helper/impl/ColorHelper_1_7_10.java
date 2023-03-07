@@ -336,10 +336,15 @@ public class ColorHelper_1_7_10 implements IColorHelper
                 else if (block.getRenderType() > 0)
                 {
                     // 1.8 check translucent because lava's opacity = 0;
+                    /*
+                    TODO: fix
+
                     if (block.isTranslucent())
                     { // try to use light opacity
                         blockAlpha = block.getLightOpacity() / 255f;
                     }
+                     */
+
 
                     // try to use texture alpha
                     if (blockAlpha == 0 || blockAlpha == 1)

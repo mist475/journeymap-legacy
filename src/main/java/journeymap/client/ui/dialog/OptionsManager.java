@@ -435,9 +435,9 @@ public class OptionsManager extends JmUI
     // 1.7
     // protected void mouseMovedOrUp(int mouseX, int mouseY, int mouseEvent)
     // 1.8
-    protected void mouseReleased(int mouseX, int mouseY, int mouseEvent)
+    protected void mouseMovedOrUp(int mouseX, int mouseY, int mouseEvent)
     {
-        super.mouseReleased(mouseX, mouseY, mouseEvent);
+        super.mouseMovedOrUp(mouseX, mouseY, mouseEvent);
 
         // 1.7
         // optionsListPane.mouseMovedOrUp(mouseX, mouseY, mouseEvent);

@@ -301,12 +301,12 @@ public class WaypointManager extends JmUI
     }
 
     @Override
-    protected void mouseReleased(int mouseX, int mouseY, int state)
+    protected void mouseMovedOrUp(int mouseX, int mouseY, int state)
     {
-        super.mouseReleased(mouseX, mouseY, state);
+        super.mouseMovedOrUp(mouseX, mouseY, state);
 
         // 1.7
-        // itemScrollPane.mouseMovedOrUp(mouseX, mouseY, state);
+        //itemScrollPane.mouseMovedOrUp(mouseX, mouseY, state);
 
         // 1.8
         itemScrollPane.mouseReleased(mouseX, mouseY, state);

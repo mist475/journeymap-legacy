@@ -20,7 +20,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.RenderHelper;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.input.Keyboard;
@@ -110,13 +109,13 @@ public abstract class JmUI extends GuiScreen
     }
 
     @Override
-    protected void mouseReleased(int mouseX, int mouseY, int mouseEvent)
+    protected void mouseMovedOrUp(int mouseX, int mouseY, int mouseEvent)
     {
         // 1.7
-        // super.mouseMovedOrUp(mouseX, mouseY, mouseEvent);
+        super.mouseMovedOrUp(mouseX, mouseY, mouseEvent);
 
         // 1.8
-        super.mouseReleased(mouseX, mouseY, mouseEvent);
+        //super.mouseReleased(mouseX, mouseY, mouseEvent);
     }
 
     //    protected boolean mouseOverButtons(int x, int y)
